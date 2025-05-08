@@ -1,0 +1,16 @@
+extenssions?
+local server , global server?
+live srver install
+prettier code formater
+
+Action	Shortcut (Windows)
+Format Code	Shift + Alt + F
+Open Extensions	Ctrl + Shift + X
+Open Terminal	Ctrl + ~
+Save All Files	Ctrl + K then S
+
+Extension	Use
+Live Server	Auto-refresh browser on file save
+HTML CSS Support	IntelliSense for HTML/CSS
+Auto Rename Tag	Renames closing tag when you rename opening tag
+Path Intellisense	Autocompletes file paths
