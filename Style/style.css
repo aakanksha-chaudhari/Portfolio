@@ -1987,36 +1987,40 @@ body {
   color: #0ef;
 }
 
-/* Typing effect and cursor for the text */
+/* Typing text effect */
 .typing-text {
   font-weight: 600;
-  color: #0ef; /* Cyan color */
+  color: #0ef; /* Neon Cyan */
   display: inline-block;
 }
 
-/* Style for the role change text */
+/* Optional: For a different color inside the sentence (if you want to highlight just the role) */
 .role-change {
   font-weight: bold;
-  color: #ff4ecd; /* Different color for the changing role */
-  display: inline-block;
+  color: #ff4ecd;
+  display: inline;
 }
 
-/* Cursor animation for the typing effect */
+/* Cursor styling */
 .cursor {
   display: inline-block;
-  width: 10px;
-  height: 20px;
+  width: 2px;
+  height: 1em;
   background-color: #0ef;
-  margin-left: 5px;
-  animation: blink 0.8s infinite step-end;
+  margin-left: 4px;
+  animation: blink 0.7s steps(1) infinite;
 }
 
 /* Cursor blinking animation */
 @keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
   50% {
     opacity: 0;
   }
 }
+
 
 
 /* .home {

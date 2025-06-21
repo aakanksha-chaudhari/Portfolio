@@ -236,3 +236,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
   changeRole(); // Start the role change
 });
+ 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const typingText = document.querySelector(".typing-text");
+  const cursor = document.querySelector(".cursor");
+
+  const roles = [
+    "Full Stack Developer",
+    "AI Enthusiast",
+    "Open Source Contributor",
+    "Lifelong Learner"
+  ];
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingDelay = 100;
+  let erasingDelay = 60;
+  let newTextDelay = 1500; // delay between current and next text
+
+  function type() {
+    const currentText = roles[roleIndex];
+
+    if (!isDeleting) {
+      typingText.textContent = currentText.substring(0, charIndex++);
+      if (charIndex > currentText.length) {
+        isDeleting = true;
+        setTimeout(type, newTextDelay); // wait before erasing
+        return;
+      }
+    } else {
+      typingText.textContent = currentText.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 500); // short delay before typing next
+        return;
+      }
+    }
+
+    setTimeout(type, isDeleting ? erasingDelay : typingDelay);
+  }
+
+  type(); // start typing
+});
